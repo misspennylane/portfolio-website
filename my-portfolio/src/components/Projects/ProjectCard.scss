@@ -1,0 +1,108 @@
+$primary-color: #2a2a2a;
+$accent-color: #61fb82;
+$bg-light: #f5f5f5;
+$transition: all 0.3s ease;
+
+
+.project-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: $transition;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    .project-overlay {
+      opacity: 1;
+    }
+  }
+  .project-image {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: $transition;
+    }
+
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($primary-color, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: $transition;
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+
+        .project-link {
+          padding: 0.6rem 1rem;
+          background-color: $accent-color;
+          color: $primary-color;
+          text-decoration: none;
+          border-radius: 4px;
+          font-weight: bold;
+          font-size: 0.9rem;
+          transition: $transition;
+
+          &:hover {
+            background-color: darken($accent-color, 10%);
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+
+  .project-info {
+    padding: 1.5rem;
+    flex-grow:1 ;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      margin-bottom: 0.8rem;
+      color: $primary-color;
+      font-size: 1.3rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      color: lighten($primary-color, 20%);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      .project-tag {
+        font-size: 0.8rem;
+        background-color: rgba($accent-color, 0.2);
+        color: darken($accent-color, 30%);
+        padding: 0.3rem 0.6rem;
+        border-radius: 50px;
+        font-weight: 500;
+      }
+    }
+  }
+}
