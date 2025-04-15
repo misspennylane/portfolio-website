@@ -1,0 +1,168 @@
+$primary-color: #2a2a2a;
+$accent-color: #61fb82;
+$light-bg: #ffffff;
+$card-bg: #f8f9fa;
+$transition: all 0.3s ease;
+
+.skills {
+  padding: 5rem 0;
+  background-color: $light-bg;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 2.5rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background-color: $accent-color;
+      }
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: lighten($primary-color, 25%);
+      font-size: 1.1rem;
+    }
+  }
+
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .skills-category {
+    background-color: $card-bg;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: $transition;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      color: $primary-color;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 3px;
+        background-color: $accent-color;
+      }
+    }
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+
+  .skill {
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+
+      .skill-name {
+        font-weight: 500;
+        color: $primary-color;
+      }
+
+      .skill-percentage {
+        color: lighten($primary-color, 30%);
+        font-size: 0.9rem;
+      }
+    }
+
+    .skill-bar {
+      height: 8px;
+      background-color: rgba($primary-color, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+
+      .skill-progress {
+        height: 100%;
+        background-color: $accent-color;
+        border-radius: 4px;
+        position: relative;
+        transition: width 1s ease-in-out;
+
+        // Optional: add a shimmer effect
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+                          90deg,
+                          rgba(255,255,255,0) 0%,
+                          rgba(255,255,255,0.2) 50%,
+                          rgba(255,255,255,0) 100%
+          );
+          animation: shimmer 2s infinite;
+        }
+      }
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .skills {
+    .section-header {
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .skills-container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
