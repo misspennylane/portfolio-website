@@ -11,8 +11,10 @@ const Hero = () => {
                     </h1>
                     <h2>Frontend Developer</h2>
                     <p>
-                        I create responsive and interactive web experiences with a focus on
-                        clean code and user-centered design.
+                        🚀 Junior Frontend Developer
+                        Focusing on HTML, SCSS, JavaScript & TypeScript.
+                        I’m at the start of my journey, eager to learn, and quick to pick up new skills.
+                        Driven, customer-focused, and a true team player.
                     </p>
                     <div className="hero-buttons">
                         <a href="#projects" className="btn btn-primary">View My Work</a>
@@ -25,6 +27,7 @@ const Hero = () => {
                   <div className="tech-icon css">CSS3</div>
                   <div className="tech-icon js">JS</div>
                   <div className="tech-icon react">React</div>
+                  <div className="tech-icon angular">Angular</div>
                   <div className="tech-icon ts">TS</div>
                   </div>
               </div>

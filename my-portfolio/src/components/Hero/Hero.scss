@@ -119,6 +119,11 @@ $transition: all 0.3s ease;
           color: black;
         }
 
+        &.angular {
+          background-color: #DD0014;
+          color: white;
+        }
+
         &.ts {
           background-color: #3178C6;
           color: white;
